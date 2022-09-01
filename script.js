@@ -54,6 +54,6 @@ var opcionesPizza = {
         console.log("Proteinas: " + this.proteinas[Math.floor(Math.random()*(this.quesos.length))]);
     }
 }
-
 opcionesPizza.funcion_pizza_random();
 
+/*debe existir una manera más práctica de refactorizar este codigo, pero por el momento lo dejaré así. */
