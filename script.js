@@ -38,7 +38,8 @@ console.log(DojoCarolina);
 var DojoAndrea = pizzaOven ("rellena de queso", "bechamel", ["mozzarella"], ["pollo", "espinaca", "choclo"]);
 console.log (DojoAndrea);
 
-//Usando Math.random()
+//Usando Math.random() versión sin refactorizar
+/*
 var opcionesPizza = {
     "corteza": ["a la piedra", "delgada", "gruesa", "rellena de queso"],
     "salsa":  ["pomodoro", "bechamel", "barbecue"],
@@ -55,5 +56,28 @@ var opcionesPizza = {
     }
 }
 opcionesPizza.funcion_pizza_random();
+*/
 
-/*debe existir una manera más práctica de refactorizar este codigo, pero por el momento lo dejaré así. */
+//Revisión de codigo: 
+
+function randomIngrediente(lista){
+    return lista[Math.floor(Math.random()*(lista.length))]
+}
+
+//Usando Math.random()
+var opcionesPizza = {
+    "corteza": ["a la piedra", "delgada", "gruesa", "rellena de queso"],
+    "salsa":  ["pomodoro", "bechamel", "barbecue"],
+    "quesos": ["mozzarella", "feta", "cuatro quesos", "azul"],
+    "vegetales": ["espinaca", "choclo", "aceitunas", "champiñones", "tomate"],
+    "proteinas": ["pollo", "carne", "pepperoni","tocino", "jamon"],
+    "funcion_pizza_random": function pizzaRandom(){
+        console.log("Pizza con ingredientes aleatoreos=");
+        console.log("Corteza: " + randomIngrediente(this.corteza));
+        console.log("Salsa: " +  randomIngrediente(this.salsa));
+        console.log("Quesos: " +  randomIngrediente(this.quesos));
+        console.log("Vegetales: " +  randomIngrediente(this.vegetales));
+        console.log("Proteinas: " +  randomIngrediente(this.proteinas));
+    }
+}
+opcionesPizza.funcion_pizza_random();
